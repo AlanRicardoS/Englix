@@ -30,3 +30,6 @@
     border-color: white;
     border: groove;
   }
+button{
+  margin: 0 10px;
+}
