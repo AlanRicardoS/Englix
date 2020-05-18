@@ -11,26 +11,41 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
 
     <style>
+      #body{
+        background-color: rgb(0,0,15);
+      }
       p {
-        color: rgb(1000,9,20);
+        color: white;
       }
       h1{
-        color: rgb(229,9,20);
+        color: white;
       }
       #nav{
         background-color: rgb(229,9,20);
+      }
+
+      #tema{
+        color: white;
+        background-color: rgb(229,9,20);
+      }
+      #temab{
+        color: white;
+        background-color: rgb(0,0,15);
+      }
+      #jumb{
+        background-color: rgb(0,0,15);
       }
     </style>
 
     <title>Document</title>
 </head>
 
-<body class="bg-light">
+<body id="body">
 
     <!-- NavBar -->
 
     <nav id="nav" class="navbar navbar-expand-lg " >
-        <a class="navbar-brand text-light" href="#">Navbar</a>
+        <a class="navbar-brand text-light" href="#">Englix</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,7 +62,7 @@
               <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
               </a>
-              <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu" style="background-color: rgb(229,9,20);" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item text-light" href="#">Action</a>
                 <a class="dropdown-item text-light" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
@@ -58,7 +73,7 @@
               <a class="nav-link text-light disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
             <li class="nav-item">
-                <button type="button" class="btn btn-secondary">
+                <button type="button" class="btn text-light">
                     Notifications <span class="badge badge-light">4</span>
                   </button>
             </li>
@@ -76,53 +91,53 @@
     <div class="container">
       
         <main role="main" class="container">
-            <div class="jumbotron">
+            <div id="jumb" class="jumbotron">
             <h1>Aula 01</h1>
             <p class="lead">O tema desta aula é ... e fara voce trabalhar muito seu ...  .. . ..<p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a id="tema" class="btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 Videos
                 </a>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                <button id="tema" class="btn" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
                 Documentos
                 </button>
             </p>
             <div class="collapse" id="collapseExample">
-                <div class="card card-body">
+                <div id="temab" class="card card-body">
                     <p>Clique a seguir para ver os videos</p>
-                    <button type="button" class="btn btn-primary">Ver o Video</button>
+                    <button id="tema" type="button" class="btn">Ver o Video</button>
                 </div>
             </div>
            
             <div class="collapse" id="collapseExample1">
-                <div class="card card-body">
+                <div id="temab" class="card card-body">
                     <p>Clique a seguir para ver os documentos dessa aula</p>
-                    <button type="button" class="btn btn-primary">Ver documentos</button>
+                    <button id="tema" type="button" class="btn">Ver documentos</button>
                 </div>
             </div>
             </div>
         
-            <div class="jumbotron">
+            <div id="jumb" class="jumbotron">
             <h1>Aula 02</h1>
             <p class="lead">Nesta aula voce ira aprender a usar o ... aplicando nas ... e realizando ...</p>
             <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+                <a id="tema" class="btn" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
                     Videos
                     </a>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+                    <button id="tema" class="btn" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
                     Documentos
                     </button>
                 </p>
                 <div class="collapse" id="collapseExample3">
-                    <div class="card card-body">
+                    <div id="temab" class="card card-body">
                         <p>Clique a seguir para ver os videos</p>
-                        <button type="button" class="btn btn-primary">Ver o Video</button>
+                        <button id="tema" type="button" class="btn">Ver o Video</button>
                     </div>
                 </div>
                
                 <div class="collapse" id="collapseExample4">
-                    <div class="card card-body">
+                    <div id="temab" class="card card-body">
                         <p>Clique a seguir para ver os documentos dessa aula</p>
-                        <button type="button" class="btn btn-primary">Ver documentos</button>
+                        <button id="tema" type="button" class="btn">Ver documentos</button>
                     </div>
                 </div>
             </div>
