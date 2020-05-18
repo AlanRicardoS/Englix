@@ -7,7 +7,7 @@ Englix/
   ├── englix/
        ├── models.py
        └── views.py
- ├── static/<br/>
+ ├── static/
        ├── fonts/
        ├── img/
        └── arquivos.css
