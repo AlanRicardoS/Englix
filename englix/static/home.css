@@ -33,30 +33,17 @@
 button{
   margin: 0 10px;
 }
-#headingOne{
-  background-color: rgb(0 0 15);
-  color: white;
-  
 
-}
-.card-body{
-  background-color: rgb(229,9,20);
-  border-color: white;
-  
-}
-.card{
-  background-color: rgb(0 0 15);
-  color: white;
-  border-radius: 8px;
-}
-main{
-  border: groove;
-  border-radius: 10px;
-  border-color: white;
-}
 #b1{
-  background-color: rgb(229,9,20);
+    background-color: rgb(229,9,20);
+  }
+#c1{
+    background-color: rgb(0,0,15);
+    border: groove;
+    border-color: blanchedalmond;
 }
-#card-center{
-  border-radius: 10px;
+#a1{
+    background-color: rgb(229,9,20);
+    border: groove;
+    border-color: blanchedalmond;
 }

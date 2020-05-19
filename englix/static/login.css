@@ -41,7 +41,7 @@ body {
   border-bottom-left-radius: 10;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
+  margin-bottom: -1px;
   border-top-left-radius: 10;
   border-top-right-radius: 10;
 }
