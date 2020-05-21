@@ -50,7 +50,7 @@ class Answer(db.Model):
     answer_type = db.Column(db.Boolean, default=False, nullable=False)
     quiz_id = db.Column(db.Integer, db.ForeignKey('quiz.id'), nullable=False)
 
-class Admin(db.Model):
+class AdminUser(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     usuario=db.Column(db.String(50),nullable=False)
     password = db.Column(db.String(25), nullable=False)
