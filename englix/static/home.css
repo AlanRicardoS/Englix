@@ -49,19 +49,13 @@ button{
   top:50px;
 }
 
-#centro2{
-  top: 100px;
-}
-
-#side {
-  background-color:white;
-  color: red;
-  top: 100px;
-  right: 0px;
-  left: 100px;
-}
-#sideb {
-  color: red;
+#oldlessons{
+  position: relative;
+  margin-left: 50%;
+  margin-right: 50%;
+  margin-top: 150px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: small;
 }
 
 .blog-header {
@@ -159,6 +153,8 @@ button{
     text-align: center;
     background-color: #f9f9f9;
     border-top: .05rem solid #e5e5e5;
+    margin-bottom: 0;
+    margin-top: 1000px;
   }
   .blog-footer p:last-child {
     margin-bottom: 0;
