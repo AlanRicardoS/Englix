@@ -49,3 +49,8 @@ class Answer(db.Model):
     content = db.Column(db.String(200), nullable=False)
     answer_type = db.Column(db.Boolean, default=False, nullable=False)
     quiz_id = db.Column(db.Integer, db.ForeignKey('quiz.id'), nullable=False)
+
+class Admin(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    usuario=db.Column(db.String,nullable=False)
+    password = db.Column(db.String(25), nullable=False)
