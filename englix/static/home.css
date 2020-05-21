@@ -102,6 +102,16 @@ button{
     .h-md-250 { height: 250px; }
   }
   
+  #side {
+    background-color:white;
+    color: red;
+    border-style: solid;
+    border-radius: 10px;
+  }
+  #sideb {
+    color: red;
+  }
+
   /* Pagination */
   .blog-pagination {
     margin-bottom: 4rem;
