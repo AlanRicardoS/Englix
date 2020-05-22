@@ -17,16 +17,15 @@ def create_app():
     app.register_blueprint(englix)
 
     
-    from englix.models import Student, Lesson, Activity, Quiz, Answer, AdminUser
+    from englix.models import User, Lesson, Activity, Quiz, Answer
 
     admin = Admin(app, name='Englix')
     
-    admin.add_view(ModelView(Student, db.session))
+    admin.add_view(ModelView(User, db.session))
     admin.add_view(ModelView(Lesson, db.session))
     admin.add_view(ModelView(Activity, db.session))
     admin.add_view(ModelView(Quiz, db.session))
     admin.add_view(ModelView(Answer, db.session))
-    admin.add_view(ModelView(AdminUser, db.session))
     
     return app
 

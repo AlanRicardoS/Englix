@@ -8,12 +8,17 @@ class LevelType(enum.Enum):
     Advanced = 60
     Fluent = 80
 
-class Student(db.Model):
+class RoleType(enum.Enum):
+    Student = 1
+    Admin = 0
+
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(25), nullable=False)
     level_type = db.Column(db.Enum(LevelType))
+    role_type = db.Column(db.Enum(RoleType), default = 1)
 
     def __repr__(self):
         return '<name %r, email %r, password %r, id %r>' % (self.name, self.email, self.password, self.id)
@@ -49,8 +54,3 @@ class Answer(db.Model):
     content = db.Column(db.String(200), nullable=False)
     answer_type = db.Column(db.Boolean, default=False, nullable=False)
     quiz_id = db.Column(db.Integer, db.ForeignKey('quiz.id'), nullable=False)
-
-class AdminUser(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    usuario=db.Column(db.String(50),nullable=False)
-    password = db.Column(db.String(25), nullable=False)

@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-from .models import Student
+from .models import User
 from app import db
 
 englix = Blueprint('englix', __name__,  url_prefix='/englix')
