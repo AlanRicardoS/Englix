@@ -55,13 +55,13 @@ top: 100px;
 
 #side {
 background-color:white;
-color: red;
+color: rgb(229,9,20);
 top: 100px;
 right: 0px;
 left: 100px;
 }
 #sideb {
-color: red;
+color: rgb(229,9,20);
 }
 
 .blog-header {
