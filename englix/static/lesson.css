@@ -36,34 +36,9 @@
   }
   /* stylelint-disable selector-list-comma-newline-after */
   
-  #centro{
-  color: white;
-  position: relative;
-  height: 350px;
-  width: 100%;
-  top: 100px;
+  #footer{
+    margin-top: 600px;
   }
-  
-  #centro1{
-  width: 100%;
-  top:50px;
-  }
-  
-  #centro2{
-  top: 100px;
-  }
-  
-  #side {
-  background-color:white;
-  color: rgb(229,9,20);
-  top: 100px;
-  right: 0px;
-  left: 100px;
-  }
-  #sideb {
-  color: rgb(229,9,20);
-  }
-  
   .blog-header {
     line-height: 1;
     border-bottom: 1px solid #e5e5e5;
