@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+
+  </head>
+  <body>
+    
+    <a-scene>
+      
+      
+      <a-box widht="1" height="1" depth="1" 
+        position="0 0 0"
+        rotation="45 45 45"
+        scale="1 2.5 1"
+        src="textura.jpg"
+      >
+      <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0" ></a-animation>
+      <a-event name="mouseenter" scale="4 1 6"></a-event>
+    </a-box>
+      
+    <a-camera position="0 7 5">
+      <a-cursor color="#FF0000"></a-cursor>
+    </a-camera>
+    <a-sky src="../../static/img/mercado-AR.jpg"></a-sky>  
+    </a-scene>
+
+    
+    <script>
+     
+      
+
+    </script>
+  </body>
+</html>
