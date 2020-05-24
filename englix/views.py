@@ -1,7 +1,10 @@
 from flask import Blueprint
 
-englixBP = Blueprint('englix', __name__)
+from .models import User
+from app import db
 
-@englixBP.route('/')
+englix = Blueprint('englix', __name__,  url_prefix='/englix')
+
+@englix.route('/')
 def index():
    return "Hello World"
