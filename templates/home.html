@@ -23,7 +23,7 @@
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto" style="display: flex" > 
-          <a class="navbar-brand" href="#">
+          <a href="{{ url_for('englix.home') }}" class="navbar-brand" href="#">
             <img src="../static/img/home-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             Home
           </a>
@@ -36,9 +36,9 @@
         <ul>
           <a class="navbar-brand my-2 my-sm-0" type="submit">
           <img src="../static/img/supervised_user_circle-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
-            User
+            {{ name }}
         </a>
-        <a class="navbar-brand my-2 my-sm-0" type="submit">
+        <a href="{{ url_for('englix.logout') }}" class="navbar-brand my-2 my-sm-0" type="submit">
           <img src="../static/img/exit_to_app-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             Logout
         </a>

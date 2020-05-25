@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
+from flask_login import LoginManager
 
 db = SQLAlchemy()
 
@@ -20,7 +21,15 @@ def create_app():
     from englix.models import User, Lesson, Activity, Quiz, Answer
 
     admin = Admin(app, name='Englix')
+    login_manager = LoginManager(app)
     
+    login_manager.login_view = 'englix.login'
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
+
     admin.add_view(ModelView(User, db.session))
     admin.add_view(ModelView(Lesson, db.session))
     admin.add_view(ModelView(Activity, db.session))

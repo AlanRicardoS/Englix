@@ -6,7 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Jekyll v4.0.1">
-        <title>Cadastre-se</title>
+        <title>Sign Up</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -14,8 +14,7 @@
     
         <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
     
-        <!-- Bootstrap core CSS -->
-    <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        
     
         <!-- Favicons -->
     <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -48,27 +47,29 @@
         <link href="../static/login.css" rel="stylesheet">
       </head>
   <body class="text-center">
-     
-    <form class="form-signin">
-        <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Entre com os dados</h1>
-        <label for="inputEmail" class="sr-only">Nome Completo</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Nome Completo" required autofocus>
+    
+    <form class="form-signin" action="/signup" method="POST">
+        <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+
+        <label for="inputName" class="sr-only">Name</label>
+        <input type="name" id="name" name= "name" class="form-control" placeholder="Name" required autofocus>
         <br>
-        <label for="inputEmail" class="sr-only">Endereço de E-mail</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de E-mail" required autofocus>
+        <label for="inputEmail" class="sr-only">E-mail</label>
+        <input type="email" id="email" name= "email" class="form-control" placeholder="Email" required autofocus>
         <br>
-        <label for="inputPassword" class="sr-only">Senha</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="password" name= "password" class="form-control" placeholder="Password" required>
         <br>
-        <label for="inputPassword" class="sr-only">Confirme sua senha</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Confirme sua senha" required>
+        <!-- 
+        <label for="inputPassword" class="sr-only">Confirm Password</label>*/ 
+        <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
+        -->
 
         <div class="checkbox mb-3">
         
         </div>
-        <button id="but" class="btn btn-lg btn-block" type="submit">Entrar</button>
-        <p class="mt-5 mb-3 ">&copy; 2020</p>
+        <button id="but" class="btn btn-lg btn-block" type="submit">Register</button>
+        
         </form>
     
 </body>

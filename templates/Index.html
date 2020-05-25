@@ -24,7 +24,7 @@
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto" style="display: flex" > 
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="{{ url_for('englix.index') }}">
             <img src="../static/img/home-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             Home
           </a>
@@ -35,14 +35,14 @@
           
           -->
         
-        <a class="navbar-brand" type="submit">
+        <a class="navbar-brand"  href="{{ url_for('englix.signup') }}" type="submit">
           <img src="../static/img/account_circle-24px.svg" id="sigin" width=40 height="28" class="d-inline-block align-top" alt="">
-            Criar a Conta
+            Sing Up
         </a>
       </ul>
-          <a class="navbar-brand" type="submit">
+          <a class="navbar-brand" href="{{ url_for('englix.login') }}" type="submit">
           <img src="../static/img/supervised_user_circle-24px.svg" id="sigin" width=40 height="28" class="d-inline-block align-top" alt="">
-            Entrar
+            Log In
         </a>
 <!--       
         <a class="navbar-brand" type="submit">
@@ -60,9 +60,9 @@
   </div>
     <div id="centro" class="jumbotron rounded bg-dark">
       <div class="col-md-6 px-0">
-        <h1 class="display-4 font-bold">No Englix o seu ingles evolui</h1>
-        <h4 class="lead my-3">Aqui no Englix voce aprende com a ajuda de videos de filmes e series.</h4>
-        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Cadastrar</a></p>
+        <h1 class="display-4 font-bold">Upgrade your english skills with Englix!</h1>
+        <h4 class="lead my-3">Learn watching clips from series and movies.</h4>
+        <p class="lead mb-0"><a href="{{ url_for('englix.signup') }}" class="text-white font-weight-bold">Sign Up!</a></p>
        
       </div>
     </div>
@@ -70,8 +70,8 @@
       <div id="centro1" class="col-md-6">
         <div id="centro1" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2" style="color: rgb(229,9,20);">Aulas</strong>
-            <h3 class="mb-0">Nossa aulas possuem didaticas diferenciadas</h3>
+            <strong class="d-inline-block mb-2" style="color: rgb(229,9,20);">Lessons</strong>
+            <h3 class="mb-0">We make learning fun! Our activities contains clips from tv series and movies, it's a real-life experience </h3>
             
            <br>
             <!-- <button type="button" class="btn" style="background-color: rgb(229,9,20);"><a href="#" class="stretched-link text-light">Go to Lessons</a></button> -->
@@ -84,8 +84,8 @@
       <div id="centro1" class="col-md-6">
         <div id="centro1" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 " style="color: rgb(229,9,20);">Realidade Aumentada</strong>
-            <h3 class="mb-0">Em nossas aulas usamos realidade aumentada para criar atividades mais ativas.</h3>
+            <strong class="d-inline-block mb-2 " style="color: rgb(229,9,20);">Immersive Activities</strong>
+            <h3 class="mb-0">Experience a new way of learning with Immersive Activities</h3>
             <div class="mb-1 text-muted"></div>
             
           </div>
@@ -110,9 +110,9 @@
           
         </div>
         <div class="col-6 col-md">
-          <h5>Equipe</h5>
+          <h5>Staff</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Julia Vitória</a></li>
+            <li><a class="text-muted" href="#">Júlia Vitória</a></li>
             <li><a class="text-muted" href="#">Felipe Ramos</a></li>
             <li><a class="text-muted" href="#">Bruno Eduardo</a></li>
             <li><a class="text-muted" href="#">Alan Ricardo</a></li>
@@ -120,12 +120,12 @@
           </ul>
         </div>
         <div class="col-6 col-md">
-          <h5>Git</h5>
+          <h5>Github</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">juliavpaiva</a></li>
-            <li><a class="text-muted" href="#">felphlk</a></li>
-            <li><a class="text-muted" href="#">brunneves</a></li>
-            <li><a class="text-muted" href="#">alanricardos</a></li>
+            <li><a class="text-muted" href="https://github.com/juliavpaiva">juliavpaiva</a></li>
+            <li><a class="text-muted" href="https://github.com/felphlk">felphlk</a></li>
+            <li><a class="text-muted" href="https://github.com/brunneves">brunneves</a></li>
+            <li><a class="text-muted" href="https://github.com/AlanRicardoS">alanricardos</a></li>
           </ul>
         </div>
         

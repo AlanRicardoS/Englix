@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, UserMixin
 import enum
 
 from app import db
@@ -12,13 +13,13 @@ class RoleType(enum.Enum):
     Student = 1
     Admin = 0
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), unique=True, nullable=False)
-    password = db.Column(db.String(25), nullable=False)
-    level_type = db.Column(db.Enum(LevelType))
-    role_type = db.Column(db.Enum(RoleType), default = 1)
+    password = db.Column(db.String(100), nullable=False)
+    level_type = db.Column(db.Enum(LevelType), default = "Intermadiate")
+    role_type = db.Column(db.Enum(RoleType), default = "Student")
 
     def __repr__(self):
         return '<name %r, email %r, password %r, id %r>' % (self.name, self.email, self.password, self.id)

@@ -12,21 +12,22 @@
   </head>
   <body class="text-center" style="background-color: #e5e5e5;">
     
-      <form class="form-signin bg-dark" style="border-radius: 8px;">
-    <img class="mb-4" src="../static/img/englix.png" alt="" width="100">
-    <h1 class="h3 mb-3 font-weight-normal text-light">Please sign in</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox mb-3">
-      <label>
-        <p class="text-light"><input type="checkbox"style="color: white;" value="remember-me"> Remember me</p>
-      </label>
-    </div>
-    <button class="btn btn-lg btn-block" style="color:white; background-color: rgb(229,9,20);" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
-  </form>
+    <form action="/login" method="POST" class="form-signin bg-dark" style="border-radius: 8px;">
+
+      <img class="mb-4" src="../static/img/englix.png" alt="" width="100">
+      <h1 class="h3 mb-3 font-weight-normal text-light">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword"  class="sr-only">Password</label>
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <p class="text-light"><input type="checkbox"style="color: white;" value="remember-me"> Remember me</p>
+        </label>
+      </div>
+      <button class="btn btn-lg btn-block" style="color:white; background-color: rgb(229,9,20);" type="submit">Sign in</button>
+
+    </form>
   </body>
 
     <!-- Optional JavaScript -->
