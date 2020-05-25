@@ -35,16 +35,6 @@
      top: 50px;
   }
   /* stylelint-disable selector-list-comma-newline-after */
-  #lesson{
-    color:red;
-    background-color: white;
-  }
-
-  #lessons{
-    color: red;
-    font-weight: 700;
-    font-family: 'Bebas Neue';
-  } 
   #button{
     color:white;
     background-color: red;
@@ -52,7 +42,7 @@
     font-size: 24px;
     width: 200px;
   }
-
+  
   #footer{
     margin-top: 600px;
   }
