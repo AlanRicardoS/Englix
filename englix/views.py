@@ -11,22 +11,21 @@ englix = Blueprint('englix', __name__)
 
 class NewModelView(ModelView):
     def is_accessible(self):
-      print(current_user.role_type)
       if current_user.role_type == RoleType.Student: 
          return abort(404)
       else:
          return current_user.is_authenticated
     def inaccessible_callback(self, name, **kwargs):
-        return redirect(url_for('englix.home'))
+        return abort(404)
 
 class NewAdminIndexView(AdminIndexView):
     def is_accessible(self):
-      if current_user.role_type != "Admin": 
-         return redirect(url_for('englix.home'))
+      if current_user.role_type == RoleType.Student: 
+         return abort(404)
       else:
          return current_user.is_authenticated
     def inaccessible_callback(self, name, **kwargs):
-        return redirect(url_for('englix.home'))
+        return abort(404)
 
 @englix.route('/login')
 def login():
