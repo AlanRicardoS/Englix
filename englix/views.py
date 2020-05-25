@@ -1,10 +1,32 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, current_user, logout_user
-from .models import User
+from flask_admin import Admin, AdminIndexView
+from flask_admin.contrib.sqla import ModelView
+
+from .models import User, Lesson, Activity, Quiz, Answer, RoleType
 from app import db
 
 englix = Blueprint('englix', __name__)
+
+class NewModelView(ModelView):
+    def is_accessible(self):
+      print(current_user.role_type)
+      if current_user.role_type == RoleType.Student: 
+         return abort(404)
+      else:
+         return current_user.is_authenticated
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect(url_for('englix.home'))
+
+class NewAdminIndexView(AdminIndexView):
+    def is_accessible(self):
+      if current_user.role_type != "Admin": 
+         return redirect(url_for('englix.home'))
+      else:
+         return current_user.is_authenticated
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect(url_for('englix.home'))
 
 @englix.route('/login')
 def login():
@@ -56,6 +78,7 @@ def signup_post():
 def logout():
    logout_user()
    return redirect(url_for('englix.index'))
+
 
 @englix.route('/index')
 def index():

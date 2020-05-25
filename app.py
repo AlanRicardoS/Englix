@@ -19,8 +19,9 @@ def create_app():
 
     
     from englix.models import User, Lesson, Activity, Quiz, Answer
+    from englix.views import NewAdminIndexView, NewModelView
 
-    admin = Admin(app, name='Englix')
+    admin = Admin(app, name='Englix', index_view=NewAdminIndexView())
     login_manager = LoginManager(app)
     
     login_manager.login_view = 'englix.login'
@@ -30,11 +31,11 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
 
-    admin.add_view(ModelView(User, db.session))
-    admin.add_view(ModelView(Lesson, db.session))
-    admin.add_view(ModelView(Activity, db.session))
-    admin.add_view(ModelView(Quiz, db.session))
-    admin.add_view(ModelView(Answer, db.session))
+    admin.add_view(NewModelView(User, db.session))
+    admin.add_view(NewModelView(Lesson, db.session))
+    admin.add_view(NewModelView(Activity, db.session))
+    admin.add_view(NewModelView(Quiz, db.session))
+    admin.add_view(NewModelView(Answer, db.session))
     
     return app
 
