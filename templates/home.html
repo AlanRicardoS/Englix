@@ -23,11 +23,11 @@
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto" style="display: flex" > 
-          <a href="{{ url_for('englix.home') }}" class="navbar-brand" href="#">
+          <a href="{{ url_for('englix.home') }}" class="navbar-brand">
             <img src="../static/img/home-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             Home
           </a>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="{{ url_for('englix.lessons') }}">
             <img src="../static/img/menu_book-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             Lessons
           </a>

@@ -27,6 +27,9 @@ class NewAdminIndexView(AdminIndexView):
     def inaccessible_callback(self, name, **kwargs):
         return abort(404)
 
+
+# -------------------------------------------------------------------------------------- #
+
 @englix.route('/login')
 def login():
     return render_template('login.html')
@@ -79,6 +82,8 @@ def logout():
    return redirect(url_for('englix.index'))
 
 
+# -------------------------------------------------------------------------------------- #
+
 @englix.route('/index')
 def index():
     return render_template('Index.html')
@@ -88,3 +93,9 @@ def index():
 def home():
    user_name = current_user.name
    return render_template('home.html', name=user_name)
+
+@englix.route('/lessons')
+def lessons():
+   user_name = current_user.name
+   user_level = current_user.level_type
+   return render_template('lessons.html', lessons=Lesson.query.filter_by(level_type=user_level).all(), name=user_name)

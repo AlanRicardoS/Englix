@@ -19,12 +19,12 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto" style="display: flex" > 
-            <a class="navbar-brand" href="#">
+            <a href="{{ url_for('englix.home') }}" class="navbar-brand">
               <img src="../static/img/home-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
               Home
             </a>
           
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url_for('englix.lessons') }}">
               <img src="../static/img/menu_book-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
               Lessons
             </a>
@@ -32,9 +32,9 @@
         <ul>
           <a class="navbar-brand my-2 my-sm-0" type="submit">
           <img src="../static/img/supervised_user_circle-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
-            User
+            {{ name }}
         </a>
-        <a class="navbar-brand my-2 my-sm-0" type="submit">
+        <a href="{{ url_for('englix.logout') }}" class="navbar-brand my-2 my-sm-0" type="submit">
           <img src="../static/img/exit_to_app-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             Logout
         </a>
@@ -55,85 +55,36 @@
             <a class="navbar-brand" id="title-1" href="#"><img src="../static/img/englix.png" style="width: 200px;"></a>
           </div>
        <br><br><br>
-
-          <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  
-                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" style="padding: 1px 2px ;" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <b style="font-size: 25px; color: rgb(229,9,20);"> Lesson 01 </b> <img class="float-right" src="../static/img/done-24px.svg" alt="20x20">
-                  </button>
-                </h2>
-              </div>
+        
+       {% if lessons %}
           
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="card" style="width: 50%;">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <h5 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h5>
-                          <a href="#" class="btn" style="color: white; background-color: rgb(229,9,20);" >Go to Lesson</a>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <h5 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h5>
-                          <a href="#" class="btn" style="color: white; background-color: rgb(229,9,20);" >Go to Activities</a>
-                        </div>
-                      </div>                
-                    </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <button class="btn btn-link btn-block text-left collapsed"  style="padding: 1px 2px ;" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <b style="font-size: 25px; color: rgb(229,9,20);"> Lesson 02 </b> <img class="float-right" src="../static/img/done-24px.svg" alt="20x20">
-
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card" style="width: 50%;">
+          {% for lesson in lessons %}
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" style="padding: 1px 2px ;" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <b style="font-size: 25px; color: rgb(229,9,20);"> Lesson {{ lesson.id }} - {{ lesson.name }} </b> <img class="float-right" src="../static/img/done-24px.svg" alt="20x20">
+                    </button>
+                  </h2>
+                </div>
+            
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h5 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h5>
+                    <h5 class="card-text">{{ lesson.description }}</h5>
                     <a href="#" class="btn" style="color: white; background-color: rgb(229,9,20);" >Go to Lesson</a>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h5 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h5>
-                    <a href="#" class="btn" style="color: white; background-color: rgb(229,9,20);" >Go to Activities</a>
+            
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                  <button class="btn btn-link btn-block text-left collapsed"  style="padding: 1px 2px ;" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <b style="font-size: 25px; color: rgb(229,9,20);"> Lesson 03 </b> <img class="float-right" src="../static/img/done-24px.svg" alt="20x20">
-
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card" style="width: 50%;">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h5 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h5>
-                    <a href="#" class="btn" style="color: white; background-color: rgb(229,9,20);" >Go to Lesson</a>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h5 class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</h5>
-                    <a href="#" class="btn" style="color: white; background-color: rgb(229,9,20);" >Go to Activities</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
+          {% endfor %}
+        {% else %}
+            
+          <h5 class="card-text">No lessons available</h5>
+        {% endif %}
+          
           <footer id="footer" class="blog-footer">
             <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
             <p>
