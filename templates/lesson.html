@@ -56,27 +56,51 @@
           </div>
        <br><br><br>
         
-       {% if lessons %}
+       <h1 style="font-size: 45px;"><b> Lesson {{ lesson.id }} - {{ lesson.name }}  </b></h1>
+
+       {% if lesson.activities %}
           
-          {% for lesson in lessons %}
+          {% for activity in lesson.activities %}
             <div class="accordion" id="accordionExample">
               <div class="card">
-                <div class="card-header" id="heading{{lesson.id}}">
+                <div class="card-header" id="heading{{activity.id}}">
                   <h2 class="mb-0">
                     
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" style="padding: 1px 2px ;" data-target="#collapse{{lesson.id}}" aria-expanded="true" aria-controls="collapse{{lesson.id}}">
-                      <b style="font-size: 25px; color: rgb(229,9,20);"> Lesson {{ lesson.id }} - {{ lesson.name }} </b> <img class="float-right" src="../static/img/done-24px.svg" alt="20x20">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" style="padding: 1px 2px ;" data-target="#collapse{{activity.id}}" aria-expanded="true" aria-controls="collapse{{activity.id}}">
+                      <b style="font-size: 30px; color: rgb(229,9,20);"> Activity {{ activity.id }}</b> 
                     </button>
                   </h2>
                 </div>
             
-                <div id="collapse{{lesson.id}}" class="collapse" aria-labelledby="heading{{lesson.id}}" data-parent="#accordionExample">
+                <div id="collapse{{activity.id}}" class="collapse" aria-labelledby="heading{{activity.id}}" data-parent="#accordionExample">
                   <div class="card-body">
-                    <h5 class="card-text">{{ lesson.description }}</h5>
-                    <a href="{{ url_for('englix.lesson', lesson_id=lesson.id) }}" class="btn" style="color: white; background-color: rgb(229,9,20);" >Go to Lesson</a>
-            
+                    <h5 class="card-text" >{{ activity.content_file }}</h5>
+
+                        {% for quiz in activity.quizes %}
+                          <form>
+                              <fieldset>
+                                <legend id="lessons"> {{ quiz.content }} </legend>
+
+                                {% for answer in quiz.answers %}
+                                  <div>
+                                    <input type = "radio" id="lesson" name = "answer" valor = "{{ answer.id }}">
+                                    <label for = "answer{{ loop.index }}"> {{ answer.content }} </label>
+                                  </div>
+                                  
+                                {% endfor %}
+                                  <div>
+                                    <button id="button" type="submit" href="#" class="btn">Check Answer</button>
+                                  </div>
+                                  <br>
+                              </fieldset>            
+                          </form>				
+                        {% endfor %}
+
                   </div>
+                  
                 </div>
+
+
               </div>
             </div>
           {% endfor %}
@@ -84,6 +108,7 @@
             
           <h5 class="card-text">No lessons available</h5>
         {% endif %}
+        
           
           <footer id="footer" class="blog-footer">
             <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>

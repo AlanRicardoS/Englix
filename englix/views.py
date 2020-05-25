@@ -86,7 +86,10 @@ def logout():
 
 @englix.route('/index')
 def index():
-    return render_template('Index.html')
+   print(current_user)
+   if current_user.is_authenticated:
+      return redirect(url_for('englix.home'))
+   return render_template('Index.html')
 
 @englix.route('/home')
 @login_required
@@ -95,7 +98,15 @@ def home():
    return render_template('home.html', name=user_name)
 
 @englix.route('/lessons')
-def lessons():
+@login_required
+def lessons(): 
    user_name = current_user.name
    user_level = current_user.level_type
    return render_template('lessons.html', lessons=Lesson.query.filter_by(level_type=user_level).all(), name=user_name)
+
+
+@englix.route('/lesson/<int:lesson_id>')
+@login_required
+def lesson(lesson_id):
+   user_name = current_user.name
+   return render_template('lesson.html', lesson=Lesson.query.filter_by(id=lesson_id).first(), name=user_name)
