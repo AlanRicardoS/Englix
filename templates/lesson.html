@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/lesson.css">
     <title>Lessons</title>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+    
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,11 +42,7 @@
             Logout
         </a>
       </ul>
-  <!--       
-          <a class="navbar-brand" type="submit">
-            <img src="../static/img/exit_to_app-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
-              Logout
-          </a> -->
+
          
         </div>
       </nav>
@@ -66,7 +65,7 @@
                 <div class="card-header" id="heading{{activity.id}}">
                   <h2 class="mb-0">
                     
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" style="padding: 1px 2px ;" data-target="#collapse{{activity.id}}" aria-expanded="true" aria-controls="collapse{{activity.id}}">
+                    <button class="btn btn-link btn-block text-left collapsed"  type="button" data-toggle="collapse" style="padding: 1px 2px ;" data-target="#collapse{{activity.id}}" aria-expanded="true" aria-controls="collapse{{activity.id}}">
                       <b style="font-size: 30px; color: rgb(229,9,20);"> Activity {{ activity.id }}</b> 
                     </button>
                   </h2>
@@ -74,7 +73,9 @@
             
                 <div id="collapse{{activity.id}}" class="collapse" aria-labelledby="heading{{activity.id}}" data-parent="#accordionExample">
                   <div class="card-body">
-                    <h5 class="card-text" >{{ activity.content_file }}</h5>
+  
+                        {% include  activity.content_file %}
+
 
                         {% for quiz in activity.quizes %}
                           <form>
@@ -83,7 +84,7 @@
 
                                 {% for answer in quiz.answers %}
                                   <div>
-                                    <input type = "radio" id="lesson" name = "answer" valor = "{{ answer.id }}">
+                                    <input type = "radio" id="lesson" name = "answer" valor = "{{ answer.id }}" value= "{{answer.answer_type}}">
                                     <label for = "answer{{ loop.index }}"> {{ answer.content }} </label>
                                   </div>
                                   
@@ -122,6 +123,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+    <script>
+      w3.includeHTML();
+    </script>
+    
   </body>
 </html>
 

@@ -2,10 +2,19 @@
     font-family: 'Bebas Neue';
     src: url(../static/fonts/BebasNeue/BebasNeue-Book.ttf);
     
-  
     font-weight: normal;
     font-style: normal;
+    
   }
+@font-face {
+    font-family: 'Roboto';
+    src: url(../static/fonts/Roboto/Roboto-Medium.ttf);
+    
+    font-weight: normal;
+    font-style: normal;
+    
+  }
+
   p{
     font-weight: normal;
     font-style: normal;
@@ -30,6 +39,14 @@
     font-family: 'Bebas Neue';
     font-size:  30px;
   }
+
+  #text_activity{
+    color: black;
+    font-weight: 600;
+    font-family: 'Roboto';
+  }
+
+
   #title-1{
       position: relative;
      top: 50px;
@@ -38,13 +55,19 @@
   #lesson{
     color:black;
     background-color: white;
-    font-family: 'Bebas Neue';
+    font-family: 'Roboto';
   }
 
   #lessons{
     color: black;
-    font-weight: 600;
-    font-family: 'Bebas Neue';
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto';
+  } 
+  #content{
+    color: black;
+    font-weight: 400;
+    font-family: 'Roboto';
   } 
   #button{
     color:white;
@@ -54,6 +77,7 @@
     width: 120px;
   }
 
+ 
   #footer{
     margin-top: 600px;
   }

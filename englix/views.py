@@ -86,7 +86,6 @@ def logout():
 
 @englix.route('/index')
 def index():
-   print(current_user)
    if current_user.is_authenticated:
       return redirect(url_for('englix.home'))
    return render_template('Index.html')
@@ -110,3 +109,11 @@ def lessons():
 def lesson(lesson_id):
    user_name = current_user.name
    return render_template('lesson.html', lesson=Lesson.query.filter_by(id=lesson_id).first(), name=user_name)
+
+@englix.route('/AR/<string:file>')
+@login_required
+def AR(file):
+   user_name = current_user.name
+   
+   return render_template('/AR/'+file, name=user_name)
+

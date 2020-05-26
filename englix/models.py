@@ -40,7 +40,7 @@ class ActivityType(enum.Enum):
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     lesson_id = db.Column(db.Integer, db.ForeignKey('lesson.id'), nullable=False)
-    content_file = db.Column(db.String(200), nullable=False)
+    content_file = db.Column(db.String(1000), nullable=False)
     activity_type = db.Column(db.Enum(ActivityType))
     
     quizes = db.relationship('Quiz', backref='activity', cascade="all,delete", lazy=True)
