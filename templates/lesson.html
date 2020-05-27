@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -10,42 +11,61 @@
     <link rel="stylesheet" href="../static/lesson.css">
     <title>Lessons</title>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>
+      
+      function RespotaCerta(){
+       
+        if (document.querySelector('input[name = answer]:checked')){
+          console.log(document.querySelector('input[name = answer]:checked').value)
+          if (document.querySelector('input[name = answer]:checked').value=="True"){
+            alert("Resposta Correta!")
 
+           }
+           else{ 
+            alert("Resposta Errada!")
+           }
+
+      }
+
+     }
+    </script>
     
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       
-        <button class="navbar-toggler center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon center"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto" style="display: flex" > 
-            <a href="{{ url_for('englix.home') }}" class="navbar-brand">
-              <img src="../static/img/home-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
-              Home
-            </a>
+      <button class="navbar-toggler center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon center"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" style="display: flex" > 
+          <a href="{{ url_for('englix.home') }}" class="navbar-brand">
+            <img src="../static/img/home-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
+            Home
+          </a>
+          <a class="navbar-brand" href="{{ url_for('englix.lessons') }}">
+            <img src="../static/img/menu_book-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
+            Lessons
+          </a>
+          <a class="navbar-brand" href="{{ url_for('englix.lessons') }}">
+            <img src="../static/img/card_membership-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
+            test your level
+          </a>
           
-            <a class="navbar-brand" href="{{ url_for('englix.lessons') }}">
-              <img src="../static/img/menu_book-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
-              Lessons
-            </a>
-        </ul>
-        <ul>
-          <a class="navbar-brand my-2 my-sm-0" type="submit">
+          </ul>
+          <ul class="navbar-nav " style="display: flex" > 
+          <a class="navbar-brand " type="submit">
           <img src="../static/img/supervised_user_circle-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             {{ name }}
         </a>
-        <a href="{{ url_for('englix.logout') }}" class="navbar-brand my-2 my-sm-0" type="submit">
+        <a href="{{ url_for('englix.logout') }}" class="navbar-brand" type="submit">
           <img src="../static/img/exit_to_app-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             Logout
         </a>
       </ul>
-
-         
-        </div>
-      </nav>
+      </div>
+    </nav>
       
           
         <div class="container">
@@ -78,23 +98,25 @@
 
 
                         {% for quiz in activity.quizes %}
-                          <form>
+                          <form >
                               <fieldset>
                                 <legend id="lessons"> {{ quiz.content }} </legend>
 
                                 {% for answer in quiz.answers %}
                                   <div>
-                                    <input type = "radio" id="lesson" name = "answer" valor = "{{ answer.id }}" value= "{{answer.answer_type}}">
+                                    <input type = "radio" id="{{ answer.id }}" name = "answer" valor = "{{ answer.id }}" value= "{{answer.answer_type}}">
                                     <label for = "answer{{ loop.index }}"> {{ answer.content }} </label>
                                   </div>
                                   
                                 {% endfor %}
                                   <div>
-                                    <button id="button" type="submit" href="#" class="btn">Check Answer</button>
+                                    <button id="button" type="submit" href="#" onClick="RespotaCerta()" class="btn">Check Answer</button> 
+                                    
                                   </div>
                                   <br>
                               </fieldset>            
-                          </form>				
+                          </form>	
+                         		
                         {% endfor %}
 
                   </div>
