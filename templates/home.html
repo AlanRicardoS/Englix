@@ -31,21 +31,25 @@
             <img src="../static/img/menu_book-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             Lessons
           </a>
+          <a class="navbar-brand" href="{{ url_for('englix.lessons') }}">
+            <img src="../static/img/card_membership-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
+            test your level
+          </a>
           
           </ul>
-        <ul>
-          <a class="navbar-brand my-2 my-sm-0" type="submit">
+          <ul class="navbar-nav " style="display: flex" > 
+          <a class="navbar-brand " type="submit">
           <img src="../static/img/supervised_user_circle-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             {{ name }}
         </a>
-        <a href="{{ url_for('englix.logout') }}" class="navbar-brand my-2 my-sm-0" type="submit">
+        <a href="{{ url_for('englix.logout') }}" class="navbar-brand" type="submit">
           <img src="../static/img/exit_to_app-24px.svg" width=40 height="28" class="d-inline-block align-top" alt="">
             Logout
         </a>
       </ul>
       </div>
     </nav>
-    <div class="container">
+<div class="container">
       <div style="width: 20%">
     <a class="navbar-brand" id="title-1" href="#"><img src="../static/img/englix.png" style="width: 200px;"></a>
   </div>
@@ -87,20 +91,43 @@
         </div>
       </div>
     </div>
-    <div id="oldlessons">
-        <h1 id="oldlessons">Old Lessons</h1>
-    </div>
+    <div><br><br></div>
   </div>  
 
     
+  <br>
+  <br>
+  <br>
+  <br><br>
 
-
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" src="../assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+        
+      </div>
+      <div class="col-6 col-md">
+        <h5>Staff</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Júlia Vitória</a></li>
+          <li><a class="text-muted" href="#">Felipe Ramos</a></li>
+          <li><a class="text-muted" href="#">Bruno Eduardo</a></li>
+          <li><a class="text-muted" href="#">Alan Ricardo</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Github</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="https://github.com/juliavpaiva">juliavpaiva</a></li>
+          <li><a class="text-muted" href="https://github.com/felphlk">felphlk</a></li>
+          <li><a class="text-muted" href="https://github.com/brunneves">brunneves</a></li>
+          <li><a class="text-muted" href="https://github.com/AlanRicardoS">alanricardos</a></li>
+        </ul>
+      </div>
+      
+  </div>
+  </footer>
     </body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
