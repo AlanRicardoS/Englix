@@ -18,14 +18,13 @@
         if (document.querySelector('input[name = answer]:checked')){
           console.log(document.querySelector('input[name = answer]:checked').value)
           if (document.querySelector('input[name = answer]:checked').value=="True"){
-            alert("Resposta Correta!")
-
+            alert("Right Answer, good job!")
+            
            }
            else{ 
-            alert("Resposta Errada!")
+            alert("Wrong Answer, try again!")
            }
-
-      }
+        }
 
      }
     </script>
@@ -110,7 +109,7 @@
                                   
                                 {% endfor %}
                                   <div>
-                                    <button id="button" type="submit" href="#" onClick="RespotaCerta()" class="btn">Check Answer</button> 
+                                    <button id="button" type="submit"  onClick="RespotaCerta()" class="btn">Check Answer</button> 
                                     
                                   </div>
                                   <br>
