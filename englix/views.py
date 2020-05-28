@@ -3,7 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, current_user, logout_user
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-
+from sqlalchemy import func
 from .models import User, Lesson, Activity, Quiz, Answer, RoleType
 from app import db
 
@@ -94,7 +94,8 @@ def index():
 @login_required
 def home():
    user_name = current_user.name
-   return render_template('home.html', name=user_name)
+   user_level = current_user.level_type
+   return render_template('home.html', lesson=Lesson.query.filter_by(level_type=user_level).order_by(func.random()).first(),name=user_name)
 
 @englix.route('/lessons')
 @login_required
