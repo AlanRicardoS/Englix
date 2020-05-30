@@ -11,23 +11,7 @@
     <link rel="stylesheet" href="../static/lesson.css">
     <title>Lessons</title>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <script>
-      
-      function RespotaCerta(){
-       
-        if (document.querySelector('input[name = answer]:checked')){
-          console.log(document.querySelector('input[name = answer]:checked').value)
-          if (document.querySelector('input[name = answer]:checked').value=="True"){
-            alert("Right Answer, good job!")
-           }
-           else{ 
-            alert("Wrong Answer, try again!")
-           }
-        }
-      return 0
-     }
-    </script>
-    
+   
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -101,16 +85,19 @@
                                 <legend id="lessons"> {{ quiz.content }} </legend>
 
                                 {% for answer in quiz.answers %}
+                                <form >
                                   <div>
                                     <input type = "radio" id="{{ answer.id }}" name = "answer" valor = "{{ answer.id }}" value= "{{answer.answer_type}}">
                                     <label for = "answer{{ loop.index }}"> {{ answer.content }} </label>
+                                    <meta id="my-data" data-name="{{answer.id}}" data-other="{{other}}">
                                   </div>
                                   
                                 {% endfor %}
                                   <div>
-                                    <button id="button" type="button"  onClick="RespotaCerta()" class="btn">Check Answer</button> 
+                                    <button id="button" type="reset"  onClick="RespotaCerta()" class="btn">Check Answer</button> 
                                     
                                   </div>
+                                </form>
                                   <br>
                               </fieldset>            
                           </form>	
@@ -167,8 +154,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     
     <script>
-      w3.includeHTML();
+      var el = $('#my-data').data().name;
+      function RespotaCerta(){
+        console.log(el);
+        if (document.querySelector('input[name = answer]:checked')){
+          console.log(document.querySelector('input[name = answer]:checked').value)
+          if (document.querySelector('input[name = answer]:checked').value=="True"){
+            return alert("Right Answer, good job!")
+           }
+           else{ 
+            return alert("Wrong Answer, try again!")
+           }
+        }
+      
+     }
     </script>
+    
     
   </body>
 </html>
